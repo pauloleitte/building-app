@@ -1,4 +1,7 @@
-const {Schema, model} = require('mongoose');
+const {
+    Schema,
+    model
+} = require('mongoose');
 
 const UserSchema = new Schema({
     name: {
@@ -11,10 +14,10 @@ const UserSchema = new Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true  
     },
-},  {
-        timestamps: true
+}, {
+    timestamps: true
 });
 
 module.exports = model('User', UserSchema)

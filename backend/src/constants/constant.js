@@ -1,4 +1,3 @@
-module.exports  = {
-    URL_MONGO: '',
+module.exports = {
     PORT: 3000
 }
