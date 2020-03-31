@@ -13,9 +13,9 @@ routes.post("/login", userController.login)
 
 //rotas atividades
 routes.get("/activity", jwtService.validate, activityController.find)
-routes.post("/activity", jwtService.validate, activityController.find)
-routes.delete("/activity", jwtService.validate, activityController.find)
-routes.put("/activity", jwtService.validate, activityController.find)
+routes.post("/activity", jwtService.validate, activityController.create)
+routes.delete("/activity", jwtService.validate, activityController.delete)
+routes.put("/activity", jwtService.validate, activityController.update)
 
 
 
