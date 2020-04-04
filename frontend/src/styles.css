@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #34344A;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+a:hover {
+  filter: brightness(90%);
+}
