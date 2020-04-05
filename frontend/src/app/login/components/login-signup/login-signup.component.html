@@ -1,9 +1,9 @@
 <div class="login-container">
-  <form onSubmit={logar}>
-    <input placeholder="Informe o seu nome" />
-    <input placeholder="Informe seu e-mail" type="email" />
-    <input placeholder="Informe sua senha" type="password" />
+  <form [formGroup]="formSigunp" (ngSubmit)="onSubmit()">
+    <input formControlName="name"  placeholder="Informe o seu nome" />
+    <input formControlName="email" placeholder="Informe seu e-mail" type="email" />
+    <input formControlName="password" placeholder="Informe sua senha" type="password" />
     <a [routerLink]="['/']">Voltar</a>
-    <button type="submit">Cadastrar</button>
+    <button type="submit" [disabled]="f.invalid">Cadastrar</button>
   </form>
 </div>

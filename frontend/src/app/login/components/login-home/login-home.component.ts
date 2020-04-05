@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../service/login.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './login-home.component.html',
@@ -6,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginHomeComponent implements OnInit {
 
-  constructor() { }
+  formLogin: FormGroup;
+
+  constructor(
+    private _service: LoginService,
+    private _router: Router,
+    private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.formLogin = this._formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    })
   }
+
+  onSubmit() {
+    this._service.login(this.formLogin.value).subscribe(res => {
+      console.log(res);
+    }, err => console.log(err))
+  }
+
+  get f() { return this.formLogin; }
 
 }

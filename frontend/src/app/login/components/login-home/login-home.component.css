@@ -28,6 +28,8 @@
     padding: 0 20px;
     font-size: 16px;
     color: #666;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .login-container form input ::placeholder {
@@ -53,4 +55,12 @@
     font-weight: bold;
     color: #FFF;
     cursor: pointer;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.login-container form button:disabled {
+    background: #999;
+    color: #FFF;
+    cursor: default;
 }
