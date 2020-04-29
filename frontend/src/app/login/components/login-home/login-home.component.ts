@@ -25,8 +25,13 @@ export class LoginHomeComponent implements OnInit {
 
   onSubmit() {
     this._service.login(this.formLogin.value).subscribe(res => {
-      console.log(res);
+      localStorage.setItem("TOKEN", res.token);
+      localStorage.setItem("USERNAME", res.user);
+      this._router.navigate(["/home"]);
     }, err => console.log(err))
+  }
+
+  ngOnDestroy() {
   }
 
   get f() { return this.formLogin; }

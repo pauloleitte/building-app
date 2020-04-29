@@ -1,20 +1,19 @@
+import 'package:building_app/pages/signup_pages.dart';
 import 'package:flutter/material.dart';
+import './pages/login_page.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() => runApp(MaterialApp(
+      home: LoginPage(),
+      title: 'BuildingApp',
+      routes: routes,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        hintColor: Colors.white,
+        primaryColor: Colors.redAccent,
+      ),
+    ));
 
-
-class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
-
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-       child: Text("Bem vindo!"),
-    );
-  }
-}
+final routes = <String, WidgetBuilder>{
+  LoginPage.tag: (context) => LoginPage(),
+  SignupPage.tag: (context) => SignupPage(),
+};

@@ -1,8 +1,8 @@
 <div class="login-container">
   <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
     <h1>Building App</h1>
-    <input formControlName="email" placeholder="Informe seu e-mail" type="email" />
-    <input formControlName="password" placeholder="Informe sua senha" type="password" />
+    <input formControlName="email" id="email-login" placeholder="Informe seu e-mail" type="email" />
+    <input formControlName="password" id="password-login" placeholder="Informe sua senha" type="password" />
     <a [routerLink]="['/sigin']">Não tenho cadastro</a>
     <button type="submit" [disabled]="f.invalid">Entrar</button>
   </form>

@@ -40,7 +40,8 @@ module.exports = {
                 var token = await jwtService.generate(user.id)
                 return res.status(200).json({
                     auth: true,
-                    token: token
+                    token: token,
+                    user: user.name
                 });
             }
         }
