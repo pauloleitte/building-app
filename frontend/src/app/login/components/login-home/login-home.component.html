@@ -1,9 +1,10 @@
+<app-loading *ngIf="loading"></app-loading>
 <div class="login-container">
   <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
     <h1>Building App</h1>
     <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" id="email-login" placeholder="Informe seu e-mail" type="email" />
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" id="email-login" placeholder="Informe seu e-mail" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width">

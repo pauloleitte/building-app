@@ -1,0 +1,9 @@
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    cursor: progress;
+}

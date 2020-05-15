@@ -1,8 +1,17 @@
 <div class="login-container">
   <form [formGroup]="formSigunp" (ngSubmit)="onSubmit()">
-    <input formControlName="name"  id="sigunp-name"placeholder="Informe o seu nome" />
-    <input formControlName="email" id="sigunp-email"placeholder="Informe seu e-mail" type="email" />
-    <input formControlName="password" id="sigunp-password" placeholder="Informe sua senha" type="password" />
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" id="sigunp-name" placeholder="Informe o seu nome" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" id="sigunp-email" placeholder="Informe seu e-mail" type="email" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="password" id="sigunp-password" placeholder="Informe sua senha" type="password" />
+    </mat-form-field>
     <a [routerLink]="['/']">Voltar</a>
     <button type="submit" [disabled]="f.invalid">Cadastrar</button>
   </form>
