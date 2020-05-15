@@ -8,6 +8,8 @@ import { LoginHomeComponent } from './components/login-home/login-home.component
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 import { LoginService } from './service/login.service';
 
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [LoginHomeComponent, LoginSignupComponent],
@@ -16,6 +18,7 @@ import { LoginService } from './service/login.service';
     LoginRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatInputModule
   ],
   providers: [LoginService],
 })

@@ -6,11 +6,13 @@ const {
 const ActivitySchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     percent: {
-        type: String,
-        required: true
+        type: Number,
+        required: true,
+        min: 0,
+        max: 100,
     },
 }, {
     timestamps: true

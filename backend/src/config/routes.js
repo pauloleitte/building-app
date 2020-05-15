@@ -12,10 +12,11 @@ routes.post("/login", userController.login)
 
 
 //rotas atividades
-routes.get("/activity", jwtService.validate, activityController.find)
+routes.get("/activity", jwtService.validate, activityController.findAll)
+routes.get("/activity/:id", jwtService.validate, activityController.findOne)
 routes.post("/activity", jwtService.validate, activityController.create)
-routes.delete("/activity", jwtService.validate, activityController.delete)
-routes.put("/activity", jwtService.validate, activityController.update)
+routes.delete("/activity/:id", jwtService.validate, activityController.delete)
+routes.put("/activity/:id", jwtService.validate, activityController.update)
 
 
 

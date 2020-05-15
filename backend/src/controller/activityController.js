@@ -1,53 +1,85 @@
-const Activity = require("../model/Activity");
+const activityService = require("../service/activityService")
 
 module.exports = {
+
     async create(req, res) {
         const {
             name,
             percent
         } = req.body;
-        const activity = await Activity.create({
-            name,
-            percent
-        });
-        return res.status(201).json({
-            id: activity.id
-        });
+        try {
+            const activity = await activityService.create(name, percent);
+            return res.status(201).json({
+                id: activity.id
+            });
+        } catch (e) {
+            return res.status(500).json({
+                error: e
+            })
+        }
 
     },
+
     async delete(req, res) {
-        const {
-            id
-        } = res.body
-        const exist = await Activity.findById(id)
-        if (exist) {
-            await Activity.findByIdAndDelete(id);
-            return res.status(204);
+        const id = req.params.id
+        try {
+            const exist = await activityService.findById(id);
+
+            if (exist) {
+                await activityService.findOneAndDelete(id);
+                return res.status(204).send({
+                    message: 'Atividade deletada com sucesso.'
+                })
+            }
+
+            return res.status(400).json({
+                message: 'Atividade não localizada.'
+            })
+            
+        } catch (e) {
+            return res.status(500).json({
+                error: e
+            })
         }
-        return res.status(400).json({
-            message: 'Atividade não localizada.'
-        })
+
     },
+
     async update(req, res) {
         const {
-            id,
             name,
             percent
-        } = res.body
-        const exist = await Activity.findById(id)
-        if (exist) {
-            await Activity.findByIdAndUpdate(id, {
-                name,
-                percent
-            });
-            return res.status(204);
+        } = req.body
+
+        const id = req.params.id
+
+        try {
+            const exist = await activityService.findById(id)
+            
+            if (exist) {
+                await activityService.findOneAndUpdate(id, name, percent);
+                return res.status(204).send({
+                message: 'Atividade atualizada com sucesso.'
+            })
+            }
+
+            return res.status(400).json({
+                message: 'Atividade não localizada.'
+            })
+
+        } catch (e) {
+           return res.status(500).json({
+                error: e
+            })
         }
-        return res.status(400).json({
-            message: 'Atividade não localizada.'
-        })
+
     },
-    async find(req, res) {
-        const activity = await Activity.find({});
-        return res.json(activity);
+
+    async findAll(req, res) {
+        return res.json(await activityService.findAll());
+    },
+
+    async findOne(req, res) {
+        const id = req.params.id
+        return res.json(await activityService.findOne(id))
     }
 }
