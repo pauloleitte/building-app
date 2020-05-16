@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../service/login.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   templateUrl: './login-home.component.html',
@@ -12,6 +12,7 @@ export class LoginHomeComponent implements OnInit {
 
   formLogin: FormGroup;
   loading = false;
+  hide = true;
 
   constructor(
     private _service: LoginService,
@@ -27,16 +28,19 @@ export class LoginHomeComponent implements OnInit {
   }
 
   onSubmit() {
-    this.loading = true;
-    this._service.login(this.formLogin.value).subscribe(res => {
-      this.loading = false;
-      localStorage.setItem("TOKEN", res.token);
-      localStorage.setItem("USERNAME", res.user);
-      this._router.navigate(["/home"]);
-    }, err => { 
-      this.loading = false
-      this.openSnackBar(err.error.message, "Fechar")
-    })
+    if(this.formLogin.valid){
+      this.loading = true;
+      this._service.login(this.formLogin.value).subscribe(res => {
+        this.loading = false;
+        localStorage.setItem("TOKEN", res.token);
+        localStorage.setItem("USERNAME", res.user);
+        this.openSnackBar("Login efetuado com sucesso (:", "Fechar")
+        this._router.navigate(["/home"]);
+      }, err => { 
+        this.loading = false
+        this.openSnackBar(err.error.message, "Fechar")
+      })
+    }
   }
 
   ngOnDestroy() {

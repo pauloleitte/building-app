@@ -1,18 +1,62 @@
+<app-loading *ngIf="loading"></app-loading>
 <div class="login-container">
-  <form [formGroup]="formSigunp" (ngSubmit)="onSubmit()">
-    <mat-form-field class="example-full-width">
+  <form [formGroup]="formSigunp">
+    <h1>Building App</h1>
+    <mat-form-field>
       <mat-label>Nome</mat-label>
       <input matInput formControlName="name" id="sigunp-name" placeholder="Informe o seu nome" />
+      <mat-error *ngIf="!name.pristine && name.errors && name.errors.required">
+        Nome obrigatório
+      </mat-error>
+      <mat-error *ngIf="!name.pristine && name.errors && name.errors.minlength">
+        Nome deve ter no mínimo 3 caracters.
+      </mat-error>
+      <mat-error *ngIf="!name.pristine && name.errors && name.errors.maxlength">
+        Nome deve ter no máximo 100 caracters.
+      </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>E-mail</mat-label>
-      <input matInput formControlName="email" id="sigunp-email" placeholder="Informe seu e-mail" type="email" />
+      <input matInput formControlName="email" id="sigunp-email" placeholder="Informe seu e-mail" />
+      <mat-error *ngIf="!email.pristine && email.errors && email.errors.required">
+        E-mail obrigatório
+      </mat-error>
+      <mat-error *ngIf="!email.pristine && email.errors && email.errors.email">
+        E-mail informado inválido
+      </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Senha</mat-label>
-      <input matInput formControlName="password" id="sigunp-password" placeholder="Informe sua senha" type="password" />
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" id="password"
+        placeholder="Informe sua senha">
+      <button mat-icon-button color="warn" matSuffix (click)="hide = !hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="!password.pristine && password.errors && password.errors.required">
+        Confirmação da senha obrigatório
+      </mat-error>
+      <mat-error *ngIf="!password.pristine && password.errors && password.errors.minlength">
+        Senha deve ter no mínimo 6 caracters.
+      </mat-error>
+      <mat-error *ngIf="!password.pristine && password.errors && password.errors.maxlength">
+        Senha deve ter no máximo 8 caracters.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Confirme a Senha</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="passwordConfirm" id="passwoard-confirm"
+        placeholder="Informe sua senha">
+      <button mat-icon-button color="warn" matSuffix (click)="hide = !hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="!passwordConfirm.pristine && passwordConfirm.errors && passwordConfirm.errors.required">
+        Confirmação da senha obrigatório
+      </mat-error>
+      <mat-error *ngIf="!passwordConfirm.pristine && passwordConfirm.errors && passwordConfirm.errors.notSamePassword">
+        As senhas não coincidem.
+      </mat-error>
     </mat-form-field>
     <a [routerLink]="['/']">Voltar</a>
-    <button type="submit" [disabled]="f.invalid">Cadastrar</button>
+    <button id="submitsing" type="submit" [disabled]="f.invalid" (click)="onSubmit()">Cadastrar</button>
   </form>
 </div>

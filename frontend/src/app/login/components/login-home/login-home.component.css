@@ -11,6 +11,8 @@
     max-width: 450px;
     display: flex;
     flex-direction: column;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 .login-container  h1 {
@@ -34,7 +36,7 @@
     text-align: center;
 }
 
-.login-container form button {
+#submit {
     margin-top: 16px;
     border: 0px;
     border-radius: 4px;
@@ -48,8 +50,13 @@
     margin-left: 1rem;
 }
 
-.login-container form button:disabled {
+#submit:disabled {
     background: #999;
     color: #FFF;
     cursor: no-drop;
+}
+
+.icon-eye {
+    background-color: #E0E0E0;
+    color: #D50000;
 }
