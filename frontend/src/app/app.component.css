@@ -1,0 +1,10 @@
+.navBar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+.padding14 {
+    padding: 0 14px, 14px;
+}
