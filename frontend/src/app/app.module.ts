@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app.routing.module";
-import { SharedModule } from "./shared.module";
+import { SharedModule } from "./shared/shared.module";
 import { LoginModule } from "./login/login.module";
 import { HomeModule } from './home/home.module'
 
