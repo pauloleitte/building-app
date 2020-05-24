@@ -1,5 +1,29 @@
 <mat-card class="home black mat-elevation-z3">
-    <mat-card-title class="title">
-       Atividade
-    </mat-card-title>
+  <mat-card-title class="title">
+    Atividade
+  </mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Nome"
+        name="name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        placeholder="Percentual"
+        name="percent"
+      />
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="save()" color="primary">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>
 </mat-card>
