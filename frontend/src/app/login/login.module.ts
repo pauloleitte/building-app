@@ -8,11 +8,10 @@ import { LoginHomeComponent } from './components/login-home/login-home.component
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 import { LoginService } from './service/login.service';
 import { SharedModule } from '../shared/shared.module';
-import { LoadingComponent } from '../shared/components/loading/loading.component';
 
 
 @NgModule({
-  declarations: [LoginHomeComponent, LoginSignupComponent, LoadingComponent],
+  declarations: [LoginHomeComponent, LoginSignupComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,

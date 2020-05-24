@@ -12,7 +12,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { ActivityModule } from './activity/activity.module';
 import { SharedService } from './shared/services/shared.service';
-
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
