@@ -1,8 +1,9 @@
 body {
-  background-color: #E0E0E0;
+  background-color: #303030;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
+  margin: 0; 
 }
 
 * {
@@ -24,5 +25,28 @@ a:hover {
   filter: brightness(90%);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.red {
+    color: #D32F2F;
+}
+
+.white {
+  color: #fff
+}
+
+.black {
+  background-color: #303030 ;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
+.msg-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.msg-error {
+    background-color: #D32F2F;
+    color: #fff;
+}

@@ -6,11 +6,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app.routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { LoginModule } from "./login/login.module";
-import { HomeModule } from './home/home.module'
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
+import { ActivityModule } from './activity/activity.module';
+import { SharedService } from './shared/services/shared.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    NavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -19,9 +28,9 @@ import { HomeModule } from './home/home.module'
     SharedModule,
     RouterModule,
     BrowserAnimationsModule,
-    HomeModule,
+    ActivityModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
