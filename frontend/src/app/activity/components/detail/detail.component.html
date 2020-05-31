@@ -1,29 +1,35 @@
 <mat-card class="home black mat-elevation-z3">
-  <mat-card-title class="title">
+  <mat-card-title class="title blue">
     Atividade
   </mat-card-title>
-  <form>
+  <form [formGroup]="formActivity">
     <mat-form-field>
       <input
         matInput
         placeholder="Nome"
+        formControlName="name"
         name="name"
+        id="name"
       />
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field disabled>
       <input
         matInput
-        type="number"
+        formControlName="percent"
         placeholder="Percentual"
         name="percent"
+        id="percent"
       />
     </mat-form-field>
   </form>
-  <button mat-raised-button (click)="save()" color="primary">
+  <button mat-raised-button (click)="save()" color="primary" *ngIf="!isDelete">
     Salvar
   </button>
+  <button mat-raised-button (click)="delete()" color="warn" *ngIf="isDelete">
+    Excluir
+  </button>
 
-  <button mat-raised-button (click)="cancel()">
+  <button mat-raised-button (click)="cancel()" color="accent">
     Cancelar
   </button>
 </mat-card>

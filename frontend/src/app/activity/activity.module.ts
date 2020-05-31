@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivityService } from './activity.service';
 import { SharedService } from '../shared/services/shared.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,9 @@ import { SharedService } from '../shared/services/shared.service';
     CommonModule,
     ActivityRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ActivityService,

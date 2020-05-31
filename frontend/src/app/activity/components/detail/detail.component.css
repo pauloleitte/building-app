@@ -2,17 +2,12 @@
     font-size: 3rem;
     font-weight: 300;
     line-height: 1.2;
-    color:  #FFF;
 }
 
 form {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-}
-
-form label {
-
 }
 
 button {

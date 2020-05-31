@@ -1,5 +1,5 @@
 <app-loading *ngIf="loading"></app-loading>
-<button mat-raised-button class="bg-red white" (click)="navigate()">
+<button mat-raised-button color="primary" (click)="navigate()">
   Nova Atividade
 </button>
 <div class="mat-elevation-z4">
@@ -25,7 +25,7 @@
             edit
           </i>
         </a>
-        <a routerLink="/activity/{{ row._id }}" class="delete">
+        <a routerLink="/activity/delete/{{ row._id }}" class="delete">
           <i class="material-icons">
             delete
           </i>

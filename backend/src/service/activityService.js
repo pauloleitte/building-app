@@ -1,4 +1,5 @@
 const Activity = require("../model/Activity");
+Activity.updateOptions({new: true, runValidators: true})
 
 module.exports = {
 

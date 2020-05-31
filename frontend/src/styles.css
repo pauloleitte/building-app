@@ -1,5 +1,5 @@
 body {
-  background-color: #303030;
+  background-color: #FFF;
   height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,15 +30,7 @@ a:hover {
 }
 
 .white {
-  color: #fff
-}
-
-.black {
-  background-color: #303030 ;
-}
-
-.table-black {
-  background-color: #424242;
+  color: #FFF
 }
 
 .v-middle {
@@ -47,14 +39,14 @@ a:hover {
 
 .msg-success {
     background-color: #28a745;
-    color: #fff;
+    color: #FFF;
 }
 
 .msg-error {
     background-color: #D32F2F;
-    color: #fff;
+    color: #FFf;
 }
 
-.bg-red {
-  background-color: #D32F2F;
+.blue {
+  color: #1A237E
 }

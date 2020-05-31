@@ -13,6 +13,10 @@ const routes: Routes = [
         component: DetailComponent
     },
     {
+      path: "activity/:action/:id",
+      component: DetailComponent
+    },
+    {
         path: "activity",
         component: DetailComponent
     }

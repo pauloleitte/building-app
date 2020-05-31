@@ -3,6 +3,8 @@ const {
     model
 } = require('mongoose');
 
+const restful = require('node-restful')
+
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -20,4 +22,4 @@ const UserSchema = new Schema({
     timestamps: true
 });
 
-module.exports = model('User', UserSchema)
+module.exports = restful.model('User', UserSchema)
